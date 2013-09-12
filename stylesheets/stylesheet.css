@@ -8,6 +8,10 @@ html {
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
+a a:visited a:hover {
+    color: #00cccc;
+    text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}
 /* General & 'Reset' Stuff */
 
 .container {
@@ -57,7 +61,7 @@ header h2 {
     color: #666;
 }
 
-#downloads .button {
+#navigation .button {
     display: inline-block;
     text-align: center;
     margin: 0;
@@ -225,15 +229,6 @@ hr {
 .button .server-icon {
     opacity: 1.0;
     background: url("../images/buttons/server.png") 0 0 no-repeat;
-}
-
-Links
-a, a:hover, a:visited
-
-
-a {
-    color: #63c0f5;
-    text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
 /* Clearfix */
