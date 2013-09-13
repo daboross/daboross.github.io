@@ -8,17 +8,27 @@ html {
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
-a {
-    color: #00cccc;
+#main_content a {
+    color: #00aaaa;
 }
+
+#main_content a:link {
+    color: #00aaaa;
+}
+
+#main_content a:visited {
+    color: #00aa7a;
+}
+
 a:link {
-    color: #00cccc;
+    color: #00c4cc;
 }
+
 a:visited {
-    color: #00cccc;
+    color: #00cc00;
 }
+
 a:hover {
-    color: #00cccc;
     text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 /* General & 'Reset' Stuff */
