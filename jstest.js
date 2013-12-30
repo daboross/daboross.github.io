@@ -1,4 +1,3 @@
-
 var text_map;
 var outside;
 var req = new XMLHttpRequest();
@@ -39,11 +38,3 @@ function print_thing(name, thing) {
 function isInsideCircle(x, y, radius) {
     return Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(radius, 2);
 }
-/*
- for (var i = 0; i < 300; i++) {
- if (isInsideCircle(200 - x, 200 - y, i)) {
- print_thing("radius", "Min radius is " + i);
- break;
- }
- }
- */
