@@ -1,14 +1,26 @@
 var text_map;
 var outside;
-var req = new XMLHttpRequest();
-req.open("GET", "jstest.json", true);
-req.responseType = "text";
-req.onload = function() {
-    var response = JSON.parse(this.response);
-    text_map = response["circles"];
-    outside = response["other"];
-};
-req.send();
+//var req = new XMLHttpRequest();
+//req.open("GET", "jstest.json", true);
+//req.responseType = "text";
+//req.onload = function() {
+//    var response = JSON.parse(this.response);
+//};
+//req.send();
+response = {
+    "circles": {
+        "16": "Inner circle",
+        "53": "First circle",
+        "69": "Second circle",
+        "85": "Third circle",
+        "116": "Fourth circle",
+        "146": "Fifth circle",
+        "196": "Sixth circle"
+    },
+    "other": "Outside"
+}
+text_map = response["circles"];
+outside = response["other"];
 function mouseMoveFunction(event) {
     var x = event.clientX - 8;
     var y = event.clientY - 8;
