@@ -1,30 +1,18 @@
-var text_map;
-var outside;
-//var req = new XMLHttpRequest();
-//req.open("GET", "jstest.json", true);
-//req.responseType = "text";
-//req.onload = function() {
-//    var response = JSON.parse(this.response);
-//};
-//req.send();
-response = {
-    "circles": {
-        "16": "Inner circle",
-        "53": "First circle",
-        "69": "Second circle",
-        "85": "Third circle",
-        "116": "Fourth circle",
-        "146": "Fifth circle",
-        "196": "Sixth circle"
-    },
-    "other": "Outside"
-}
-text_map = response["circles"];
-outside = response["other"];
+var text_map = {
+    "16": "Inner circle",
+    "53": "First circle",
+    "69": "Second circle",
+    "85": "Third circle",
+    "116": "Fourth circle",
+    "146": "Fifth circle",
+    "196": "Sixth circle"
+};
+var outside = "Outside";
+
 function mouseMoveFunction(event) {
     var x = event.clientX - 8;
     var y = event.clientY - 8;
-    if (!Object.keys(text_map).some(function(key) {
+    if (!Object.keys(text_map).some(function (key) {
         key = parseInt(key);
         if (isInsideCircle(200 - x, 200 - y, key)) {
             print_thing("Text", text_map[key]);
@@ -40,7 +28,7 @@ function print_thing(name, thing) {
     var parent = document.getElementById("output");
     var child = document.getElementById(name);
     if (!child) {
-        var child = document.createElement("p");
+        child = document.createElement("p");
         child.setAttribute('id', name);
         parent.appendChild(child);
     }
