@@ -8,20 +8,10 @@ var text_map = {
     "196": "Sixth circle"
 };
 var outside = "Outside";
+var circles = null;
 
-function mouseMoveFunction(event) {
-    var x = event.clientX - 8;
-    var y = event.clientY - 8;
-    if (!Object.keys(text_map).some(function (key) {
-        key = parseInt(key);
-        if (isInsideCircle(200 - x, 200 - y, key)) {
-            print_thing("Text", text_map[key]);
-            return true;
-        }
-        return false;
-    })) {
-        print_thing("Text", outside);
-    }
+function isInsideCircle(x, y, radius) {
+    return Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(radius, 2);
 }
 
 function print_thing(name, thing) {
@@ -35,6 +25,22 @@ function print_thing(name, thing) {
     child.innerHTML = thing;
 }
 
-function isInsideCircle(x, y, radius) {
-    return Math.pow(x, 2) + Math.pow(y, 2) < Math.pow(radius, 2);
+function mouseMoveFunction(event) {
+    var x = event.clientX - circles.offsetLeft;
+    var y = event.clientY - circles.offsetTop;
+    if (!Object.keys(text_map).some(function (key) {
+            key = parseInt(key);
+            if (isInsideCircle(200 - x, 200 - y, key)) {
+                print_thing("Text", text_map[key]);
+                return true;
+            }
+            return false;
+        })) {
+        print_thing("Text", outside);
+    }
+}
+
+function init() {
+    circles = document.getElementById("circles")
+    circles.onmousemove = mouseMoveFunction;
 }
