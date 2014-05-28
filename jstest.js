@@ -41,6 +41,6 @@ function mouseMoveFunction(event) {
 }
 
 function init() {
-    circles = document.getElementById("circles")
+    circles = document.getElementById("circles");
     circles.onmousemove = mouseMoveFunction;
 }
