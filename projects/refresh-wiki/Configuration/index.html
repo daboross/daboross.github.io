@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head><title>refresh-wiki - Configuration</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>Configuration</h1><p>CloudBot uses a JSON-formatted configuration file to hold settings, named <strong>config.json</strong>.</p><p>Note! This guide is still written for the old config format. It needs to be re-written for the new format.</p><h2>Default Config</h2><p>On first run config.default should be present. Rename it to config and modify the settings. The default config is as follows:</p><div class=highlight><pre><span></span><span class=p>{</span>
+    <span class=nt>&quot;connections&quot;</span><span class=p>:</span> <span class=p>[</span>
+        <span class=p>{</span>
+            <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;esper&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;connection&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;server&quot;</span><span class=p>:</span> <span class=s2>&quot;irc.esper.net&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;port&quot;</span><span class=p>:</span> <span class=mi>6667</span><span class=p>,</span>
+                <span class=nt>&quot;ssl&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+                <span class=nt>&quot;ignore_cert&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+                <span class=nt>&quot;password&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;nick&quot;</span><span class=p>:</span> <span class=s2>&quot;MyCloudBot&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;user&quot;</span><span class=p>:</span> <span class=s2>&quot;cloudbot&quot;</span><span class=p>,</span>
+            <span class=nt>&quot;avoid_notices&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=nt>&quot;channels&quot;</span><span class=p>:</span> <span class=p>[</span>
+                <span class=s2>&quot;#cloudbot&quot;</span><span class=p>,</span>
+                <span class=s2>&quot;#cloudbot2&quot;</span>
+            <span class=p>],</span>
+            <span class=nt>&quot;disabled_commands&quot;</span><span class=p>:</span> <span class=p>[],</span>
+            <span class=nt>&quot;acls&quot;</span><span class=p>:</span> <span class=p>{},</span>
+            <span class=nt>&quot;nickserv&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;enabled&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+                <span class=nt>&quot;nickserv_password&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;nickserv_user&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;nickserv_name&quot;</span><span class=p>:</span> <span class=s2>&quot;nickserv&quot;</span><span class=p>,</span>
+                <span class=nt>&quot;nickserv_command&quot;</span><span class=p>:</span> <span class=s2>&quot;IDENTIFY&quot;</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;ratelimit&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;max_tokens&quot;</span><span class=p>:</span> <span class=mf>17.5</span><span class=p>,</span>
+                <span class=nt>&quot;restore_rate&quot;</span><span class=p>:</span> <span class=mf>2.5</span><span class=p>,</span>
+                <span class=nt>&quot;message_cost&quot;</span><span class=p>:</span> <span class=mi>5</span><span class=p>,</span>
+                <span class=nt>&quot;strict&quot;</span><span class=p>:</span> <span class=kc>true</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;permissions&quot;</span><span class=p>:</span> <span class=p>{</span>
+                <span class=nt>&quot;admins&quot;</span><span class=p>:</span> <span class=p>{</span>
+                    <span class=nt>&quot;perms&quot;</span><span class=p>:</span> <span class=p>[</span>
+                        <span class=s2>&quot;addfactoid&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;delfactoid&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;ignore&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;botcontrol&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;plpaste&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;permissions_users&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;op&quot;</span>
+                    <span class=p>],</span>
+                    <span class=nt>&quot;users&quot;</span><span class=p>:</span> <span class=p>[</span>
+                        <span class=s2>&quot;examplea!user@example.com&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;exampleb!user@example.com&quot;</span>
+                    <span class=p>]</span>
+                <span class=p>},</span>
+                <span class=nt>&quot;moderators&quot;</span><span class=p>:</span> <span class=p>{</span>
+                    <span class=nt>&quot;perms&quot;</span><span class=p>:</span> <span class=p>[</span>
+                        <span class=s2>&quot;addfactoid&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;delfactoid&quot;</span><span class=p>,</span>
+                        <span class=s2>&quot;ignore&quot;</span>
+                    <span class=p>],</span>
+                    <span class=nt>&quot;users&quot;</span><span class=p>:</span> <span class=p>[</span>
+                        <span class=s2>&quot;examplec!user@example.com&quot;</span>
+                    <span class=p>]</span>
+                <span class=p>}</span>
+            <span class=p>},</span>
+            <span class=nt>&quot;plugins&quot;</span><span class=p>:</span> <span class=p>{},</span>
+            <span class=nt>&quot;command_prefix&quot;</span><span class=p>:</span> <span class=s2>&quot;.&quot;</span>
+        <span class=p>}</span>
+    <span class=p>],</span>
+    <span class=nt>&quot;api_keys&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;tvdb&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;bing_azure&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;wolframalpha&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;lastfm&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;rottentomatoes&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;soundcloud&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;twitter_consumer_key&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;twitter_consumer_secret&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;twitter_access_token&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;twitter_access_secret&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;imgur_client_id&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;imgur_client_secret&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;wunderground&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;rdio_key&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;rdio_secret&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;google_dev_key&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;google_cse_id&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;octopart&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span><span class=p>,</span>
+        <span class=nt>&quot;wordnik&quot;</span><span class=p>:</span> <span class=s2>&quot;&quot;</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;database&quot;</span><span class=p>:</span> <span class=s2>&quot;sqlite:///cloudbot.db&quot;</span><span class=p>,</span>
+    <span class=nt>&quot;plugin_loading&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;use_whitelist&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+        <span class=nt>&quot;blacklist&quot;</span><span class=p>:</span> <span class=p>[</span>
+            <span class=s2>&quot;update&quot;</span>
+        <span class=p>],</span>
+        <span class=nt>&quot;whitelist&quot;</span><span class=p>:</span> <span class=p>[]</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;web&quot;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&quot;enabled&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nt>&quot;address&quot;</span><span class=p>:</span> <span class=s2>&quot;0.0.0.0&quot;</span><span class=p>,</span>
+      <span class=nt>&quot;port&quot;</span><span class=p>:</span> <span class=mi>8090</span><span class=p>,</span>
+      <span class=nt>&quot;bot_name&quot;</span><span class=p>:</span> <span class=s2>&quot;CloudBot&quot;</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;reloading&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;config_reloading&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;plugin_reloading&quot;</span><span class=p>:</span> <span class=kc>false</span>
+    <span class=p>},</span>
+    <span class=nt>&quot;logging&quot;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=nt>&quot;console_debug&quot;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+        <span class=nt>&quot;file_debug&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;show_plugin_loading&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;show_motd&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;show_server_info&quot;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+        <span class=nt>&quot;raw_file_log&quot;</span><span class=p>:</span> <span class=kc>false</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</pre></div><h2>Options</h2><h3>Connections</h3><h4>Required:</h4><ul><li>server: The server to connect to (irc.esper.net)</li><li>nick: The name of the bot (MyNewCloudBot)</li><li>channels: A list of channels to join (#cloudbot)</li><li>command_prefix: The prefix before bot commands (.)</li></ul><h4>Optional:</h4><ul><li>port: The port to connect to (6667)</li><li>user: The bot&#39;s username (cloudbot)</li><li>server_password: Server password (None)</li><li>invite_join: Join channels on invite (True)</li><li>auto_rejoin: Rejoin channels on kick (False)</li><li>ssl: Enable/disable SSL (False)</li><li>ignore_cert: Verify SSL certificate (True)</li><li>nickserv_name: Name of network NickServ (nickserv)</li><li>nickserv_command: Command used to identify to NickServ (IDENTIFY)</li><li>nickserv_password: NickServ password (None)</li><li>nickserv_user: Nickserv account name (None)</li><li>keep_alive: Ping the server on a timer (False)</li></ul><h5>Multiple Connections</h5><p>You can clone this section, and add a coma to make a second connection.</p><div class=highlight><pre><span></span><span class=p>{</span>
+          <span class=nt>&quot;connections&quot;</span><span class=p>:</span>
+          <span class=p>[</span>
+            <span class=p>{</span>
+              <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;ServerOne&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;connection&quot;</span><span class=p>:</span> <span class=p>{</span>
+                  <span class=nt>&quot;server&quot;</span><span class=p>:</span> <span class=s2>&quot;irc.my.net&quot;</span><span class=p>,</span>
+                  <span class=err>...</span>
+              <span class=p>},</span>
+              <span class=nt>&quot;nick&quot;</span><span class=p>:</span> <span class=s2>&quot;MyFirstBot&quot;</span><span class=p>,</span>
+              <span class=err>...</span>
+            <span class=p>},</span>
+            <span class=p>{</span>
+              <span class=nt>&quot;name&quot;</span><span class=p>:</span> <span class=s2>&quot;ServerTwo&quot;</span><span class=p>,</span>
+              <span class=nt>&quot;connection&quot;</span><span class=p>:</span> <span class=p>{</span>
+                  <span class=nt>&quot;server&quot;</span><span class=p>:</span> <span class=s2>&quot;irc.other.net&quot;</span><span class=p>,</span>
+                  <span class=err>...</span>
+              <span class=p>},</span>
+              <span class=nt>&quot;nick&quot;</span><span class=p>:</span> <span class=s2>&quot;MySecondBot&quot;</span><span class=p>,</span>
+              <span class=err>...</span>
+            <span class=p>}</span>
+          <span class=p>],</span>
+          <span class=err>...</span>
+<span class=p>}</span>
+</pre></div><h3>Disabled Plugins</h3><p>An array of text, containing the names of plugins you do not want to use</p><h3>Disabled Commands</h3><p>An array of text, containing the names of commands you do not want to use</p><h3>API Keys</h3><p>A collection of various API keys to be used with various plugins</p><h3>Plugins</h3><p>A collection of settings to be used with various plugins</p><h4>Factoids</h4><ul><li>prefix: Display a prefix ([factoidname]: ) when saying a factoid (False)</li></ul><h4>Ignore</h4><ul><li>ignored: A list of ignored channels/nicks/hosts ([])</li></ul><h3>Censored Strings</h3><p>A collection of phrases that will be censored ([censored]) in the output</p><h3>Permissions</h3><p>CloudBot uses a permission node based system. Extrapolating from the example is straightforward.</p><h2>Getting Help</h2><p>If you need help with anything on this page, head on over to <a href=irc://irc.esper.net/cloudbot>#CloudBot</a>!</p></div></div></div></div></div><script src=/assets/analytics.js?64b28601></script></body></html>
