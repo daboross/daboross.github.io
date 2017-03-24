@@ -4,9 +4,24 @@
 <span class="l l-Scalar l-Scalar-Plain">config-version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 
 <span class=c1># Whether or not to enable debug mode. In debug mode, SkyWars will print a</span>
-<span class=c1># huge amount of information to the server console. There is no need to enable</span>
-<span class=c1># this unless you are asked to by support.</span>
+<span class=c1># huge amount of information to the server console. There is usually no need</span>
+<span class=c1># to enable this unless you are asked to by the developer.</span>
 <span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+
+<span class=c1># When enabled, SkyWars will report statistics to http://daboross.net, using the</span>
+<span class=c1># custom &quot;plugin-statistics&quot; system. This is similar to PluginMetrics/MCStats,</span>
+<span class=c1># but reports vastly less data, and does not use any persistent GUID for the</span>
+<span class=c1># server.</span>
+<span class=c1>#</span>
+<span class=c1># If enabled, every hour, starting one hour from server startup, the plugin</span>
+<span class=c1># will send the plugin version, server version, online player count, and an</span>
+<span class=c1># instance UUID to http://daboross.net/statistics/skywars/. The instance UUID is</span>
+<span class=c1># reset every server startup, and is not stored in any persistent files.</span>
+<span class=c1>#</span>
+<span class=c1># If disabled, no data will be sent.</span>
+<span class=c1>#</span>
+<span class=c1># For more information, see https://github.com/daboross/plugin-statistics.</span>
+<span class="l l-Scalar l-Scalar-Plain">report-statistics</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
 <span class=c1># This represents the order that the arenas are started in. Whenever enough</span>
 <span class=c1># people join the queue, a new arena is chosen either at RANDOM, or ORDERED.</span>
@@ -48,7 +63,6 @@
 <span class=c1># inventory (and experience) are restored. If false, gamemode, health and</span>
 <span class=c1># hunger are completely reset upon leaving a game.</span>
 <span class="l l-Scalar l-Scalar-Plain">save-position-gamemode-health</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-
 
 <span class=c1># A list of enabled arenas. Each of the items in this list corresponds to a</span>
 <span class=c1># file in the arenas/ folder. When SkyWars loads, it will take each item in</span>
@@ -161,6 +175,13 @@
 <span class=c1># the next, not the inner edges.</span>
 <span class="l l-Scalar l-Scalar-Plain">arena-distance-apart</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">200</span>
 
+<span class="l l-Scalar l-Scalar-Plain">arena-copying</span><span class="p p-Indicator">:</span>
+  <span class=c1># If a multi-operation arena copy is enabled, this will be how many blocks</span>
+  <span class=c1># each copy operation copies. If you feel that SkyWars is causing your server</span>
+  <span class=c1># lag on game start and game end, adjusting this value and/or</span>
+  <span class=c1># time-before-start-to-start-arena-copy-operation may help.</span>
+  <span class="l l-Scalar l-Scalar-Plain">number-of-blocks-to-copy-at-once</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+
 <span class=c1># Command whitelist sub-section</span>
 <span class="l l-Scalar l-Scalar-Plain">command-whitelist</span><span class="p p-Indicator">:</span>
 
@@ -230,6 +251,9 @@
   <span class=c1># If true, end/winning messages for games will only be shown to the</span>
   <span class=c1># player(s) who won the game, and the last player who died.</span>
   <span class="l l-Scalar l-Scalar-Plain">end</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class=c1># If true, &quot;start timer&quot; messages will only be shown to to the players who</span>
+  <span class=c1># are already in the arena queue.</span>
+  <span class="l l-Scalar l-Scalar-Plain">starting-in-start-timer</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 
 <span class=c1># Kit GUI subsection</span>
 <span class="l l-Scalar l-Scalar-Plain">kit-gui</span><span class="p p-Indicator">:</span>
@@ -252,6 +276,37 @@
   <span class=c1># enabled, join signs can also be used as a &quot;kit sign&quot; which launches the</span>
   <span class=c1># kit GUI when clicked.</span>
   <span class="l l-Scalar l-Scalar-Plain">auto-show-on-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class=c1># Settings related to the game timer, the SkyWars start timer.</span>
+<span class=c1># All sub-settings under &#39;game-timer&#39; are in seconds</span>
+<span class="l l-Scalar l-Scalar-Plain">game-timer</span><span class="p p-Indicator">:</span>
+  <span class=c1># Time before the game starts after the maximum number of players have joined.</span>
+  <span class="l l-Scalar l-Scalar-Plain">time-till-start-after-max-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+  <span class=c1># Time before the game starts after the minimum number of players have joined.</span>
+  <span class="l l-Scalar l-Scalar-Plain">time-till-start-after-any-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">200</span>
+  <span class=c1># Time before the game starts to start copying the arena, in preparation of the game starting.</span>
+  <span class="l l-Scalar l-Scalar-Plain">time-before-start-to-start-arena-copy-operation</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">45</span>
+  <span class=c1># Currently unused. In the future, this will be how long after players are teleported into the arena before they are</span>
+  <span class=c1># allowed to move.</span>
+  <span class="l l-Scalar l-Scalar-Plain">time-after-start-to-freeze-players</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+  <span class=c1># This is a list of times, in seconds, to broadcast &quot;game starting in X minutes/seconds&quot; messages.</span>
+  <span class=c1>#</span>
+  <span class=c1># Each of these times is in seconds before the game starts.</span>
+  <span class=c1>#</span>
+  <span class=c1># For each time, if the time is divisible by 60, the message will be displayed as &quot;start in X minutes&quot;. If it isn&#39;t,</span>
+  <span class=c1># the message will be &quot;starting in X seconds.&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">times-to-message-before-start</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">600</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">300</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">180</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">45</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
 
 <span class=c1># Hooks available to hook into separate plugins</span>
 <span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
