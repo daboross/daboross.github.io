@@ -1,330 +1,330 @@
 <!DOCTYPE html>
-<html><head><title>Configuring SkyWars - main-config.yml</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>Configuring SkyWars - main-config.yml</h1><p>This is documentation for configuring <code>plugins/SkyWars/main-config.yml</code>.</p><p>To create a new kit, go to <a href=http://daboross.net/projects/skywars/creating-a-new-kit>http://daboross.net/projects/skywars/creating-a-new-kit</a>.</p><p>To create a new arena, go to <a href=http://daboross.net/projects/skywars/creating-an-arena>http://daboross.net/projects/skywars/creating-an-arena</a>.</p><p>To configure randomized chests, go to <a href=http://daboross.net/projects/skywars/configuring-chests>http://daboross.net/projects/skywars/configuring-chests</a>.</p><div class=highlight><pre><span></span><span class=c1># This is the configuration version. Unless you really want to mess up your</span>
-<span class=c1># configuration, you should not change this.</span>
-<span class="l l-Scalar l-Scalar-Plain">config-version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<html><head><title>Configuring SkyWars - main-config.yml</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>Configuring SkyWars - main-config.yml</h1><p>This is documentation for configuring <code>plugins/SkyWars/main-config.yml</code>.</p><p>To create a new kit, go to <a href=http://daboross.net/projects/skywars/creating-a-new-kit>http://daboross.net/projects/skywars/creating-a-new-kit</a>.</p><p>To create a new arena, go to <a href=http://daboross.net/projects/skywars/creating-an-arena>http://daboross.net/projects/skywars/creating-an-arena</a>.</p><p>To configure randomized chests, go to <a href=http://daboross.net/projects/skywars/configuring-chests>http://daboross.net/projects/skywars/configuring-chests</a>.</p><div class=highlight><pre><span></span><span class=c1># This is the configuration version. Unless you really want to mess up your</span><span class=w></span>
+<span class=c1># configuration, you should not change this.</span><span class=w></span>
+<span class=nt>config-version</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class=w></span>
 
-<span class=c1># Whether or not to enable debug mode. In debug mode, SkyWars will print a</span>
-<span class=c1># huge amount of information to the server console. There is usually no need</span>
-<span class=c1># to enable this unless you are asked to by the developer.</span>
-<span class="l l-Scalar l-Scalar-Plain">debug</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class=c1># Whether or not to enable debug mode. In debug mode, SkyWars will print a</span><span class=w></span>
+<span class=c1># huge amount of information to the server console. There is usually no need</span><span class=w></span>
+<span class=c1># to enable this unless you are asked to by the developer.</span><span class=w></span>
+<span class=nt>debug</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
 
-<span class=c1># When enabled, SkyWars will report statistics to http://daboross.net, using the</span>
-<span class=c1># custom &quot;plugin-statistics&quot; system. This is similar to PluginMetrics/MCStats,</span>
-<span class=c1># but reports vastly less data, and does not use any persistent GUID for the</span>
-<span class=c1># server.</span>
-<span class=c1>#</span>
-<span class=c1># If enabled, every hour, starting one hour from server startup, the plugin</span>
-<span class=c1># will send the plugin version, server version, online player count, and an</span>
-<span class=c1># instance UUID to http://daboross.net/statistics/skywars/. The instance UUID is</span>
-<span class=c1># reset every server startup, and is not stored in any persistent files.</span>
-<span class=c1>#</span>
-<span class=c1># If disabled, no data will be sent.</span>
-<span class=c1>#</span>
-<span class=c1># For more information, see https://github.com/daboross/plugin-statistics.</span>
-<span class="l l-Scalar l-Scalar-Plain">report-statistics</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># When enabled, SkyWars will report statistics to http://daboross.net, using the</span><span class=w></span>
+<span class=c1># custom &quot;plugin-statistics&quot; system. This is similar to PluginMetrics/MCStats,</span><span class=w></span>
+<span class=c1># but reports vastly less data, and does not use any persistent GUID for the</span><span class=w></span>
+<span class=c1># server.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># If enabled, every hour, starting one hour from server startup, the plugin</span><span class=w></span>
+<span class=c1># will send the plugin version, server version, online player count, and an</span><span class=w></span>
+<span class=c1># instance UUID to http://daboross.net/statistics/skywars/. The instance UUID is</span><span class=w></span>
+<span class=c1># reset every server startup, and is not stored in any persistent files.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># If disabled, no data will be sent.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># For more information, see https://github.com/daboross/plugin-statistics.</span><span class=w></span>
+<span class=nt>report-statistics</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># This represents the order that the arenas are started in. Whenever enough</span>
-<span class=c1># people join the queue, a new arena is chosen either at RANDOM, or ORDERED.</span>
-<span class=c1>#</span>
-<span class=c1># Setting this value to RANDOM will make a random arena be chosen from</span>
-<span class=c1># enabled-arenas when a new game starts. Setting it to ORDERED will make each</span>
-<span class=c1># enabled arena be started in sequence.</span>
-<span class="l l-Scalar l-Scalar-Plain">arena-order</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">RANDOM</span>
+<span class=c1># This represents the order that the arenas are started in. Whenever enough</span><span class=w></span>
+<span class=c1># people join the queue, a new arena is chosen either at RANDOM, or ORDERED.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># Setting this value to RANDOM will make a random arena be chosen from</span><span class=w></span>
+<span class=c1># enabled-arenas when a new game starts. Setting it to ORDERED will make each</span><span class=w></span>
+<span class=c1># enabled arena be started in sequence.</span><span class=w></span>
+<span class=nt>arena-order</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">RANDOM</span><span class=w></span>
 
-<span class=c1># This is the string that will prefix all SkyWars announcements.</span>
-<span class="l l-Scalar l-Scalar-Plain">message-prefix</span><span class="p p-Indicator">:</span> <span class=s>&#39;&amp;8[&amp;cSkyWars&amp;8]&amp;a</span><span class=nv> </span><span class=s>&#39;</span>
+<span class=c1># This is the string that will prefix all SkyWars announcements.</span><span class=w></span>
+<span class=nt>message-prefix</span><span class=p>:</span><span class=w> </span><span class=s>&#39;&amp;8[&amp;cSkyWars&amp;8]&amp;a</span><span class=nv> </span><span class=s>&#39;</span><span class=w></span>
 
-<span class=c1># Whether or not to save inventories of players who are joining SkyWars games.</span>
-<span class=c1>#</span>
-<span class=c1># When this is false, each player&#39;s inventory will be wiped when the join a</span>
-<span class=c1># game and when the leave a game. When this is true the inventory is stored in</span>
-<span class=c1># memory and then wiped when the join a game, then restored when they leave.</span>
-<span class=c1>#</span>
-<span class=c1># Note that if the server crashes when games are running, or SkyWars is</span>
-<span class=c1># forcefully stopped, the inventories of the players in any game running at</span>
-<span class=c1># that time will not be recoverable.</span>
-<span class="l l-Scalar l-Scalar-Plain">save-inventory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># Whether or not to save inventories of players who are joining SkyWars games.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># When this is false, each player&#39;s inventory will be wiped when the join a</span><span class=w></span>
+<span class=c1># game and when the leave a game. When this is true the inventory is stored in</span><span class=w></span>
+<span class=c1># memory and then wiped when the join a game, then restored when they leave.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># Note that if the server crashes when games are running, or SkyWars is</span><span class=w></span>
+<span class=c1># forcefully stopped, the inventories of the players in any game running at</span><span class=w></span>
+<span class=c1># that time will not be recoverable.</span><span class=w></span>
+<span class=nt>save-inventory</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># Whether or not experience level will be saved along with inventory.</span>
-<span class=c1>#</span>
-<span class=c1># This won&#39;t work without save-inventory also being true. See save-inventory</span>
-<span class=c1># for more information.</span>
-<span class="l l-Scalar l-Scalar-Plain">save-experience</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># Whether or not experience level will be saved along with inventory.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># This won&#39;t work without save-inventory also being true. See save-inventory</span><span class=w></span>
+<span class=c1># for more information.</span><span class=w></span>
+<span class=nt>save-experience</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># Whether or not position, gamemode, health, hunger, and other survival player</span>
-<span class=c1># properties are saved when joining a SkyWars games (and restored upon leaving).</span>
-<span class=c1>#</span>
-<span class=c1># This will teleport players back to their original locations, instead of</span>
-<span class=c1># going to a lobby when finished - and will restore their gamemode, health,</span>
-<span class=c1># hunger, exhaustion and stamina. This won&#39;t work without save-inventory also</span>
-<span class=c1># being true.</span>
-<span class=c1>#</span>
-<span class=c1># If this is false, players are teleported to the lobby, and only their</span>
-<span class=c1># inventory (and experience) are restored. If false, gamemode, health and</span>
-<span class=c1># hunger are completely reset upon leaving a game.</span>
-<span class="l l-Scalar l-Scalar-Plain">save-position-gamemode-health</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># Whether or not position, gamemode, health, hunger, and other survival player</span><span class=w></span>
+<span class=c1># properties are saved when joining a SkyWars games (and restored upon leaving).</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># This will teleport players back to their original locations, instead of</span><span class=w></span>
+<span class=c1># going to a lobby when finished - and will restore their gamemode, health,</span><span class=w></span>
+<span class=c1># hunger, exhaustion and stamina. This won&#39;t work without save-inventory also</span><span class=w></span>
+<span class=c1># being true.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># If this is false, players are teleported to the lobby, and only their</span><span class=w></span>
+<span class=c1># inventory (and experience) are restored. If false, gamemode, health and</span><span class=w></span>
+<span class=c1># hunger are completely reset upon leaving a game.</span><span class=w></span>
+<span class=nt>save-position-gamemode-health</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># A list of enabled arenas. Each of the items in this list corresponds to a</span>
-<span class=c1># file in the arenas/ folder. When SkyWars loads, it will take each item in</span>
-<span class=c1># this list, look for a file in the arenas/ folder who&#39;s name is this followed</span>
-<span class=c1># by &#39;.yml&#39;, then load it into the enabled arenas list.</span>
-<span class="l l-Scalar l-Scalar-Plain">enabled-arenas</span><span class="p p-Indicator">:</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">skyblock-warriors</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">water-warriors</span>
+<span class=c1># A list of enabled arenas. Each of the items in this list corresponds to a</span><span class=w></span>
+<span class=c1># file in the arenas/ folder. When SkyWars loads, it will take each item in</span><span class=w></span>
+<span class=c1># this list, look for a file in the arenas/ folder who&#39;s name is this followed</span><span class=w></span>
+<span class=c1># by &#39;.yml&#39;, then load it into the enabled arenas list.</span><span class=w></span>
+<span class=nt>enabled-arenas</span><span class=p>:</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">skyblock-warriors</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">water-warriors</span><span class=w></span>
 
-<span class=c1># Locale to use for all player messages. Currently available locales:</span>
-<span class=c1># cz, de, dk, en, es, fr, nl, pl, pt and ru.</span>
-<span class=c1># Note that some translations are incomplete. You can also modify</span>
-<span class=c1># `messages.yml` to make your own translation (if you do, be sure to set</span>
-<span class=c1># auto-update to false in messages.yml).</span>
-<span class="l l-Scalar l-Scalar-Plain">locale</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
+<span class=c1># Locale to use for all player messages. Currently available locales:</span><span class=w></span>
+<span class=c1># cz, de, dk, en, es, fr, nl, pl, pt and ru.</span><span class=w></span>
+<span class=c1># Note that some translations are incomplete. You can also modify</span><span class=w></span>
+<span class=c1># `messages.yml` to make your own translation (if you do, be sure to set</span><span class=w></span>
+<span class=c1># auto-update to false in messages.yml).</span><span class=w></span>
+<span class=nt>locale</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">en</span><span class=w></span>
 
-<span class=c1># A list of minecraft gamerules to set in the world where arenas are run. By</span>
-<span class=c1># default, only &#39;doDaylightCycle&#39; is set - this stops day and night from</span>
-<span class=c1># changing in the arena world.</span>
-<span class="l l-Scalar l-Scalar-Plain">skywars-arena-gamerules</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">doDaylightCycle</span><span class="p p-Indicator">:</span> <span class=s>&#39;false&#39;</span>
+<span class=c1># A list of minecraft gamerules to set in the world where arenas are run. By</span><span class=w></span>
+<span class=c1># default, only &#39;doDaylightCycle&#39; is set - this stops day and night from</span><span class=w></span>
+<span class=c1># changing in the arena world.</span><span class=w></span>
+<span class=nt>skywars-arena-gamerules</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=nt>doDaylightCycle</span><span class=p>:</span><span class=w> </span><span class=s>&#39;false&#39;</span><span class=w></span>
 
-<span class=c1># Whether or not players should be immediately respawned after dying. If true,</span>
-<span class=c1># the death/respawn screen is skipped and players are teleported immediately</span>
-<span class=c1># after dying. If false, players will have the respawn screen shown as normal.</span>
-<span class=c1># When false, players will still be force respawned when the game ends if they</span>
-<span class=c1># haven&#39;t clicked the respawn button by then.</span>
-<span class="l l-Scalar l-Scalar-Plain">skip-respawn-screen</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># Whether or not players should be immediately respawned after dying. If true,</span><span class=w></span>
+<span class=c1># the death/respawn screen is skipped and players are teleported immediately</span><span class=w></span>
+<span class=c1># after dying. If false, players will have the respawn screen shown as normal.</span><span class=w></span>
+<span class=c1># When false, players will still be force respawned when the game ends if they</span><span class=w></span>
+<span class=c1># haven&#39;t clicked the respawn button by then.</span><span class=w></span>
+<span class=nt>skip-respawn-screen</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># Sub section for score storage</span>
-<span class="l l-Scalar l-Scalar-Plain">points</span><span class="p p-Indicator">:</span>
+<span class=c1># Sub section for score storage</span><span class=w></span>
+<span class=nt>points</span><span class=p>:</span><span class=w></span>
 
-  <span class=c1># Whether to enable point storage or not. If point storage is not enabled,</span>
-  <span class=c1># none of the following settings will take effect</span>
-  <span class="l l-Scalar l-Scalar-Plain">enable-points</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># Whether to enable point storage or not. If point storage is not enabled,</span><span class=w></span>
+<span class=w>  </span><span class=c1># none of the following settings will take effect</span><span class=w></span>
+<span class=w>  </span><span class=nt>enable-points</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they win a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">win-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they win a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>win-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">7</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they die in a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">death-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">-2</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they die in a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>death-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">-2</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they kill someone in</span>
-  <span class=c1># a game</span>
-  <span class="l l-Scalar l-Scalar-Plain">kill-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they kill someone in</span><span class=w></span>
+<span class=w>  </span><span class=c1># a game</span><span class=w></span>
+<span class=w>  </span><span class=nt>kill-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class=w></span>
 
-  <span class=c1># Number of seconds between saving the score to hard disk</span>
-  <span class=c1># In JSON storage, this is the number of seconds between saving the entire</span>
-  <span class=c1># score file to the hard disk.</span>
-  <span class=c1>#</span>
-  <span class=c1># In SQL storage, this is the number of seconds between saving only</span>
-  <span class=c1># uncommitted data to the SQL server. In SQL, this is also the number of</span>
-  <span class=c1># seconds between leaderboard updates.</span>
-  <span class=c1>#</span>
-  <span class=c1># Recommended to be set to values 10-30 if using SQL. 200-500 for JSON.</span>
-  <span class="l l-Scalar l-Scalar-Plain">max-save-interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">300</span>
+<span class=w>  </span><span class=c1># Number of seconds between saving the score to hard disk</span><span class=w></span>
+<span class=w>  </span><span class=c1># In JSON storage, this is the number of seconds between saving the entire</span><span class=w></span>
+<span class=w>  </span><span class=c1># score file to the hard disk.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># In SQL storage, this is the number of seconds between saving only</span><span class=w></span>
+<span class=w>  </span><span class=c1># uncommitted data to the SQL server. In SQL, this is also the number of</span><span class=w></span>
+<span class=w>  </span><span class=c1># seconds between leaderboard updates.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># Recommended to be set to values 10-30 if using SQL. 200-500 for JSON.</span><span class=w></span>
+<span class=w>  </span><span class=nt>max-save-interval</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class=w></span>
 
-  <span class=c1># If true, use the SQL storage backend. If false, the JSON storage is used.</span>
-  <span class=c1>#</span>
-  <span class=c1># Note: When using SQL backend, for most efficiency, set max-save-interval</span>
-  <span class=c1># to 20 SQL saving works differently than json saving, so max-save-interval</span>
-  <span class=c1># values from 20-100 seconds work best.</span>
-  <span class="l l-Scalar l-Scalar-Plain">use-sql</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># If true, use the SQL storage backend. If false, the JSON storage is used.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># Note: When using SQL backend, for most efficiency, set max-save-interval</span><span class=w></span>
+<span class=w>  </span><span class=c1># to 20 SQL saving works differently than json saving, so max-save-interval</span><span class=w></span>
+<span class=w>  </span><span class=c1># values from 20-100 seconds work best.</span><span class=w></span>
+<span class=w>  </span><span class=nt>use-sql</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># SQL login info</span>
-  <span class="l l-Scalar l-Scalar-Plain">sql</span><span class="p p-Indicator">:</span>
-    <span class=c1># Host to connect to</span>
-    <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
-    <span class=c1># Port to connect to</span>
-    <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
-    <span class=c1># Database to store on. Data is stored in a `skywars_user` table in this</span>
-    <span class=c1># database.</span>
-    <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft</span>
-    <span class=c1># Username to login as. Using `root` is not recommended. Instead you</span>
-    <span class=c1># should set up a more restricted user.</span>
-    <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-    <span class=c1># Password to login with.</span>
-    <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">aComplexPassword</span>
+<span class=w>  </span><span class=c1># SQL login info</span><span class=w></span>
+<span class=w>  </span><span class=nt>sql</span><span class=p>:</span><span class=w></span>
+<span class=w>    </span><span class=c1># Host to connect to</span><span class=w></span>
+<span class=w>    </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class=w></span>
+<span class=w>    </span><span class=c1># Port to connect to</span><span class=w></span>
+<span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">3306</span><span class=w></span>
+<span class=w>    </span><span class=c1># Database to store on. Data is stored in a `skywars_user` table in this</span><span class=w></span>
+<span class=w>    </span><span class=c1># database.</span><span class=w></span>
+<span class=w>    </span><span class=nt>database</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">minecraft</span><span class=w></span>
+<span class=w>    </span><span class=c1># Username to login as. Using `root` is not recommended. Instead you</span><span class=w></span>
+<span class=w>    </span><span class=c1># should set up a more restricted user.</span><span class=w></span>
+<span class=w>    </span><span class=nt>username</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class=w></span>
+<span class=w>    </span><span class=c1># Password to login with.</span><span class=w></span>
+<span class=w>    </span><span class=nt>password</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">aComplexPassword</span><span class=w></span>
 
-    <span class=c1># Time in seconds between updating the ranks of each individual. This is</span>
-    <span class=c1># the rank shown in `/sw rank`, and this will update the ranks of everyone</span>
-    <span class=c1># on the server at the given interval. However, updating each individual&#39;s</span>
-    <span class=c1># rank is a more costly operation than updating the top 10 ranks, so it is</span>
-    <span class=c1># done on a separate timer. (top 10 ranks are updated according to</span>
-    <span class=c1># max-save-interval).</span>
-    <span class="l l-Scalar l-Scalar-Plain">individual-rank-update-interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">120</span>
+<span class=w>    </span><span class=c1># Time in seconds between updating the ranks of each individual. This is</span><span class=w></span>
+<span class=w>    </span><span class=c1># the rank shown in `/sw rank`, and this will update the ranks of everyone</span><span class=w></span>
+<span class=w>    </span><span class=c1># on the server at the given interval. However, updating each individual&#39;s</span><span class=w></span>
+<span class=w>    </span><span class=c1># rank is a more costly operation than updating the top 10 ranks, so it is</span><span class=w></span>
+<span class=w>    </span><span class=c1># done on a separate timer. (top 10 ranks are updated according to</span><span class=w></span>
+<span class=w>    </span><span class=c1># max-save-interval).</span><span class=w></span>
+<span class=w>    </span><span class=nt>individual-rank-update-interval</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">120</span><span class=w></span>
 
-<span class=c1># Subsection for the economy Vault hook</span>
-<span class="l l-Scalar l-Scalar-Plain">economy</span><span class="p p-Indicator">:</span>
+<span class=c1># Subsection for the economy Vault hook</span><span class=w></span>
+<span class=nt>economy</span><span class=p>:</span><span class=w></span>
 
-  <span class=c1># Whether or not to enable hooking into Vault for economy.</span>
-  <span class=c1># If disabled, no rewards will be given, and kits with costs will also be</span>
-  <span class=c1># disabled.</span>
-  <span class="l l-Scalar l-Scalar-Plain">enable-economy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># Whether or not to enable hooking into Vault for economy.</span><span class=w></span>
+<span class=w>  </span><span class=c1># If disabled, no rewards will be given, and kits with costs will also be</span><span class=w></span>
+<span class=w>  </span><span class=c1># disabled.</span><span class=w></span>
+<span class=w>  </span><span class=nt>enable-economy</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># Amount of money to give a player when they kill someone in a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">kill-reward</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class=w>  </span><span class=c1># Amount of money to give a player when they kill someone in a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>kill-reward</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class=w></span>
 
-  <span class=c1># Amount of money to give s player when they win a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">win-reward</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class=w>  </span><span class=c1># Amount of money to give s player when they win a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>win-reward</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class=w></span>
 
-  <span class=c1># Whether or not to tell players when they get a win reward.</span>
-  <span class="l l-Scalar l-Scalar-Plain">reward-messages</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># Whether or not to tell players when they get a win reward.</span><span class=w></span>
+<span class=w>  </span><span class=nt>reward-messages</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># The distance apart arenas will be in the SkyWarsArenaWorld. If you have</span>
-<span class=c1># created bigger arenas, such as ones that are bigger than 100 blocks, you may</span>
-<span class=c1># want to increase this value.</span>
-<span class=c1>#</span>
-<span class=c1># Note that this is the distance from the center of one arena to the center of</span>
-<span class=c1># the next, not the inner edges.</span>
-<span class="l l-Scalar l-Scalar-Plain">arena-distance-apart</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">200</span>
+<span class=c1># The distance apart arenas will be in the SkyWarsArenaWorld. If you have</span><span class=w></span>
+<span class=c1># created bigger arenas, such as ones that are bigger than 100 blocks, you may</span><span class=w></span>
+<span class=c1># want to increase this value.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># Note that this is the distance from the center of one arena to the center of</span><span class=w></span>
+<span class=c1># the next, not the inner edges.</span><span class=w></span>
+<span class=nt>arena-distance-apart</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">200</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">arena-copying</span><span class="p p-Indicator">:</span>
-  <span class=c1># If a multi-operation arena copy is enabled, this will be how many blocks</span>
-  <span class=c1># each copy operation copies. If you feel that SkyWars is causing your server</span>
-  <span class=c1># lag on game start and game end, adjusting this value and/or</span>
-  <span class=c1># time-before-start-to-start-arena-copy-operation may help.</span>
-  <span class="l l-Scalar l-Scalar-Plain">number-of-blocks-to-copy-at-once</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">500</span>
+<span class=nt>arena-copying</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=c1># If a multi-operation arena copy is enabled, this will be how many blocks</span><span class=w></span>
+<span class=w>  </span><span class=c1># each copy operation copies. If you feel that SkyWars is causing your server</span><span class=w></span>
+<span class=w>  </span><span class=c1># lag on game start and game end, adjusting this value and/or</span><span class=w></span>
+<span class=w>  </span><span class=c1># time-before-start-to-start-arena-copy-operation may help.</span><span class=w></span>
+<span class=w>  </span><span class=nt>number-of-blocks-to-copy-at-once</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">500</span><span class=w></span>
 
-<span class=c1># Command whitelist sub-section</span>
-<span class="l l-Scalar l-Scalar-Plain">command-whitelist</span><span class="p p-Indicator">:</span>
+<span class=c1># Command whitelist sub-section</span><span class=w></span>
+<span class=nt>command-whitelist</span><span class=p>:</span><span class=w></span>
 
-  <span class=c1># Whether or not to enable the command whitelist. If enabled, commands use</span>
-  <span class=c1># will be restricted when in a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">whitelist-enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># Whether or not to enable the command whitelist. If enabled, commands use</span><span class=w></span>
+<span class=w>  </span><span class=c1># will be restricted when in a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>whitelist-enabled</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># If true, treat the values in `whitelist` as a blacklist, blocking them and</span>
-  <span class=c1># only them in game.</span>
-  <span class=c1># If false, treat the values in `whitelist` as a whitelist, blocking all</span>
-  <span class=c1># commands *except them* in game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">treated-as-blacklist</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class=w>  </span><span class=c1># If true, treat the values in `whitelist` as a blacklist, blocking them and</span><span class=w></span>
+<span class=w>  </span><span class=c1># only them in game.</span><span class=w></span>
+<span class=w>  </span><span class=c1># If false, treat the values in `whitelist` as a whitelist, blocking all</span><span class=w></span>
+<span class=w>  </span><span class=c1># commands *except them* in game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>treated-as-blacklist</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
 
-  <span class=c1># Commands to whitelist/blacklist in game</span>
-  <span class="l l-Scalar l-Scalar-Plain">whitelist</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/skywars</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/sw</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/me</span>
+<span class=w>  </span><span class=c1># Commands to whitelist/blacklist in game</span><span class=w></span>
+<span class=w>  </span><span class=nt>whitelist</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">/skywars</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">/sw</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">/me</span><span class=w></span>
 
-<span class=c1># Join sign appearance</span>
-<span class=c1>#</span>
-<span class=c1># When the queue length changes or a game is started, every sign is updated</span>
-<span class=c1># with &quot;{name}&quot; set to the next arena&#39;s name, &quot;{count}&quot; set to the number of</span>
-<span class=c1># players in the queue, and &quot;{max}&quot; set to the maximum number of players to</span>
-<span class=c1># join the arena before SkyWars will start the game.</span>
-<span class=c1>#</span>
-<span class=c1># This must be a list of four lines used for the four lines on the sign. If you</span>
-<span class=c1># want less than four lines, simply have the last lines be blank.</span>
-<span class=c1>#</span>
-<span class=c1># When placing a sign, the sign will turn into a SkyWars Join Sign if the first</span>
-<span class=c1># &quot;static&quot; line of the template matches. &quot;static&quot; in this case means there are</span>
-<span class=c1># no changing elements such as &quot;{name}&quot;, &quot;{count}&quot; and &quot;{max}&quot;.</span>
-<span class=c1>#</span>
-<span class=c1># For example, if you have the following configuration:</span>
-<span class=c1># join-sign-lines:</span>
-<span class=c1># - &#39;Players: {count}&#39;</span>
-<span class=c1># - &#39;Arena: {name}&#39;</span>
-<span class=c1># - &#39;Waiting for: {max}&#39;</span>
-<span class=c1># - &#39;Click to join!&#39;</span>
-<span class=c1>#</span>
-<span class=c1># Then in order to create a join sign, you would have to write a sign with the</span>
-<span class=c1># first three lines blank, and the last line with &quot;Click to join!&quot; in it.</span>
-<span class=c1>#</span>
-<span class=c1># With the default configuration, simply make a sign with the first line being</span>
-<span class=c1># &quot;[SkyWars]&quot; and it will turn into a join sign.</span>
-<span class=c1>#</span>
-<span class=c1># NOTE! When you change this setting, all currently existing join signs will</span>
-<span class=c1># no longer function or update - SkyWars uses the lines in this setting to</span>
-<span class=c1># tell which signs are still join signs when updating. (all signs are also</span>
-<span class=c1># stored in locations.yml, but SkyWars double-checks them with the join sign</span>
-<span class=c1># line format to avoid overwriting changed signs).</span>
-<span class="l l-Scalar l-Scalar-Plain">join-sign-lines</span><span class="p p-Indicator">:</span>
-<span class="p p-Indicator">-</span> <span class=s>&#39;&amp;8[&amp;cSkyWars&amp;8]&#39;</span>
-<span class="p p-Indicator">-</span> <span class=s>&#39;&amp;8Next</span><span class=nv> </span><span class=s>Game:</span><span class=nv> </span><span class=s>&amp;c{name}&#39;</span>
-<span class="p p-Indicator">-</span> <span class=s>&#39;&amp;8Players:</span><span class=nv> </span><span class=s>&amp;2{count}&amp;3/&amp;2{max}&#39;</span>
-<span class="p p-Indicator">-</span> <span class=s>&#39;&amp;cClick</span><span class=nv> </span><span class=s>to</span><span class=nv> </span><span class=s>join!&#39;</span>
+<span class=c1># Join sign appearance</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># When the queue length changes or a game is started, every sign is updated</span><span class=w></span>
+<span class=c1># with &quot;{name}&quot; set to the next arena&#39;s name, &quot;{count}&quot; set to the number of</span><span class=w></span>
+<span class=c1># players in the queue, and &quot;{max}&quot; set to the maximum number of players to</span><span class=w></span>
+<span class=c1># join the arena before SkyWars will start the game.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># This must be a list of four lines used for the four lines on the sign. If you</span><span class=w></span>
+<span class=c1># want less than four lines, simply have the last lines be blank.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># When placing a sign, the sign will turn into a SkyWars Join Sign if the first</span><span class=w></span>
+<span class=c1># &quot;static&quot; line of the template matches. &quot;static&quot; in this case means there are</span><span class=w></span>
+<span class=c1># no changing elements such as &quot;{name}&quot;, &quot;{count}&quot; and &quot;{max}&quot;.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># For example, if you have the following configuration:</span><span class=w></span>
+<span class=c1># join-sign-lines:</span><span class=w></span>
+<span class=c1># - &#39;Players: {count}&#39;</span><span class=w></span>
+<span class=c1># - &#39;Arena: {name}&#39;</span><span class=w></span>
+<span class=c1># - &#39;Waiting for: {max}&#39;</span><span class=w></span>
+<span class=c1># - &#39;Click to join!&#39;</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># Then in order to create a join sign, you would have to write a sign with the</span><span class=w></span>
+<span class=c1># first three lines blank, and the last line with &quot;Click to join!&quot; in it.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># With the default configuration, simply make a sign with the first line being</span><span class=w></span>
+<span class=c1># &quot;[SkyWars]&quot; and it will turn into a join sign.</span><span class=w></span>
+<span class=c1>#</span><span class=w></span>
+<span class=c1># NOTE! When you change this setting, all currently existing join signs will</span><span class=w></span>
+<span class=c1># no longer function or update - SkyWars uses the lines in this setting to</span><span class=w></span>
+<span class=c1># tell which signs are still join signs when updating. (all signs are also</span><span class=w></span>
+<span class=c1># stored in locations.yml, but SkyWars double-checks them with the join sign</span><span class=w></span>
+<span class=c1># line format to avoid overwriting changed signs).</span><span class=w></span>
+<span class=nt>join-sign-lines</span><span class=p>:</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class=s>&#39;&amp;8[&amp;cSkyWars&amp;8]&#39;</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class=s>&#39;&amp;8Next</span><span class=nv> </span><span class=s>Game:</span><span class=nv> </span><span class=s>&amp;c{name}&#39;</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class=s>&#39;&amp;8Players:</span><span class=nv> </span><span class=s>&amp;2{count}&amp;3/&amp;2{max}&#39;</span><span class=w></span>
+<span class="p p-Indicator">-</span><span class=w> </span><span class=s>&#39;&amp;cClick</span><span class=nv> </span><span class=s>to</span><span class=nv> </span><span class=s>join!&#39;</span><span class=w></span>
 
-<span class=c1># Message limiting - only broadcasting some messages to players who are</span>
-<span class=c1># involved in the game the message is about.</span>
-<span class="l l-Scalar l-Scalar-Plain">only-broadcast-to-players-in-arena</span><span class="p p-Indicator">:</span>
-  <span class=c1># If true, game starting messages will only be shown to those in the game</span>
-  <span class=c1># which is starting.</span>
-  <span class="l l-Scalar l-Scalar-Plain">start</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class=c1># If true, death messages of players in a game will only be shown to alive</span>
-  <span class=c1># players in that game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">death</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-  <span class=c1># If true, end/winning messages for games will only be shown to the</span>
-  <span class=c1># player(s) who won the game, and the last player who died.</span>
-  <span class="l l-Scalar l-Scalar-Plain">end</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-  <span class=c1># If true, &quot;start timer&quot; messages will only be shown to to the players who</span>
-  <span class=c1># are already in the arena queue.</span>
-  <span class="l l-Scalar l-Scalar-Plain">starting-in-start-timer</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class=c1># Message limiting - only broadcasting some messages to players who are</span><span class=w></span>
+<span class=c1># involved in the game the message is about.</span><span class=w></span>
+<span class=nt>only-broadcast-to-players-in-arena</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=c1># If true, game starting messages will only be shown to those in the game</span><span class=w></span>
+<span class=w>  </span><span class=c1># which is starting.</span><span class=w></span>
+<span class=w>  </span><span class=nt>start</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
+<span class=w>  </span><span class=c1># If true, death messages of players in a game will only be shown to alive</span><span class=w></span>
+<span class=w>  </span><span class=c1># players in that game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>death</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
+<span class=w>  </span><span class=c1># If true, end/winning messages for games will only be shown to the</span><span class=w></span>
+<span class=w>  </span><span class=c1># player(s) who won the game, and the last player who died.</span><span class=w></span>
+<span class=w>  </span><span class=nt>end</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
+<span class=w>  </span><span class=c1># If true, &quot;start timer&quot; messages will only be shown to to the players who</span><span class=w></span>
+<span class=w>  </span><span class=c1># are already in the arena queue.</span><span class=w></span>
+<span class=w>  </span><span class=nt>starting-in-start-timer</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
 
-<span class=c1># Kit GUI subsection</span>
-<span class="l l-Scalar l-Scalar-Plain">kit-gui</span><span class="p p-Indicator">:</span>
-  <span class=c1># The Kit GUI is an visual &quot;inventory&quot; menu shown which contains one &quot;totem&quot;</span>
-  <span class=c1># item per kit.</span>
+<span class=c1># Kit GUI subsection</span><span class=w></span>
+<span class=nt>kit-gui</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=c1># The Kit GUI is an visual &quot;inventory&quot; menu shown which contains one &quot;totem&quot;</span><span class=w></span>
+<span class=w>  </span><span class=c1># item per kit.</span><span class=w></span>
 
-  <span class=c1># If true, kits unavailable to the player (either due to lack of permission</span>
-  <span class=c1># or lack of funds) will be shown in the bottom of the kit GUI, with a</span>
-  <span class=c1># 9-space row separating them from the available kits.</span>
-  <span class="l l-Scalar l-Scalar-Plain">show-unavailable-kits</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># If true, kits unavailable to the player (either due to lack of permission</span><span class=w></span>
+<span class=w>  </span><span class=c1># or lack of funds) will be shown in the bottom of the kit GUI, with a</span><span class=w></span>
+<span class=w>  </span><span class=c1># 9-space row separating them from the available kits.</span><span class=w></span>
+<span class=w>  </span><span class=nt>show-unavailable-kits</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># By default, the kit GUI is accessible via a command: `/sw kitgui`. If this</span>
-  <span class=c1># is enabled, the `kitgui` command will no longer exist, and `/sw kit` will</span>
-  <span class=c1># launch the kit GUI rather than show a list of kits available.</span>
-  <span class="l l-Scalar l-Scalar-Plain">replace-kit-command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class=w>  </span><span class=c1># By default, the kit GUI is accessible via a command: `/sw kitgui`. If this</span><span class=w></span>
+<span class=w>  </span><span class=c1># is enabled, the `kitgui` command will no longer exist, and `/sw kit` will</span><span class=w></span>
+<span class=w>  </span><span class=c1># launch the kit GUI rather than show a list of kits available.</span><span class=w></span>
+<span class=w>  </span><span class=nt>replace-kit-command</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class=w></span>
 
-  <span class=c1># If this is true, the kit GUI will be launched (shown to the player)</span>
-  <span class=c1># whenever the player joins the queue or clicks a join sign. Note that the</span>
-  <span class=c1># GUI will be shown even if the player is already in the queue: if this is</span>
-  <span class=c1># enabled, join signs can also be used as a &quot;kit sign&quot; which launches the</span>
-  <span class=c1># kit GUI when clicked.</span>
-  <span class="l l-Scalar l-Scalar-Plain">auto-show-on-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># If this is true, the kit GUI will be launched (shown to the player)</span><span class=w></span>
+<span class=w>  </span><span class=c1># whenever the player joins the queue or clicks a join sign. Note that the</span><span class=w></span>
+<span class=w>  </span><span class=c1># GUI will be shown even if the player is already in the queue: if this is</span><span class=w></span>
+<span class=w>  </span><span class=c1># enabled, join signs can also be used as a &quot;kit sign&quot; which launches the</span><span class=w></span>
+<span class=w>  </span><span class=c1># kit GUI when clicked.</span><span class=w></span>
+<span class=w>  </span><span class=nt>auto-show-on-join</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-<span class=c1># Settings related to the game timer, the SkyWars start timer.</span>
-<span class=c1># All sub-settings under &#39;game-timer&#39; are in seconds</span>
-<span class="l l-Scalar l-Scalar-Plain">game-timer</span><span class="p p-Indicator">:</span>
-  <span class=c1># Time before the game starts after the maximum number of players have joined.</span>
-  <span class="l l-Scalar l-Scalar-Plain">time-till-start-after-max-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
-  <span class=c1># Time before the game starts after the minimum number of players have joined.</span>
-  <span class="l l-Scalar l-Scalar-Plain">time-till-start-after-any-join</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">200</span>
-  <span class=c1># Time before the game starts to start copying the arena, in preparation of the game starting.</span>
-  <span class="l l-Scalar l-Scalar-Plain">time-before-start-to-start-arena-copy-operation</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">45</span>
-  <span class=c1># Currently unused. In the future, this will be how long after players are teleported into the arena before they are</span>
-  <span class=c1># allowed to move.</span>
-  <span class="l l-Scalar l-Scalar-Plain">time-after-start-to-freeze-players</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
-  <span class=c1># This is a list of times, in seconds, to broadcast &quot;game starting in X minutes/seconds&quot; messages.</span>
-  <span class=c1>#</span>
-  <span class=c1># Each of these times is in seconds before the game starts.</span>
-  <span class=c1>#</span>
-  <span class=c1># For each time, if the time is divisible by 60, the message will be displayed as &quot;start in X minutes&quot;. If it isn&#39;t,</span>
-  <span class=c1># the message will be &quot;starting in X seconds.&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">times-to-message-before-start</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">600</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">300</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">180</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">45</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">15</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class=c1># Settings related to the game timer, the SkyWars start timer.</span><span class=w></span>
+<span class=c1># All sub-settings under &#39;game-timer&#39; are in seconds</span><span class=w></span>
+<span class=nt>game-timer</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=c1># Time before the game starts after the maximum number of players have joined.</span><span class=w></span>
+<span class=w>  </span><span class=nt>time-till-start-after-max-join</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class=w></span>
+<span class=w>  </span><span class=c1># Time before the game starts after the minimum number of players have joined.</span><span class=w></span>
+<span class=w>  </span><span class=nt>time-till-start-after-any-join</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">200</span><span class=w></span>
+<span class=w>  </span><span class=c1># Time before the game starts to start copying the arena, in preparation of the game starting.</span><span class=w></span>
+<span class=w>  </span><span class=nt>time-before-start-to-start-arena-copy-operation</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">45</span><span class=w></span>
+<span class=w>  </span><span class=c1># Currently unused. In the future, this will be how long after players are teleported into the arena before they are</span><span class=w></span>
+<span class=w>  </span><span class=c1># allowed to move.</span><span class=w></span>
+<span class=w>  </span><span class=nt>time-after-start-to-freeze-players</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class=w></span>
+<span class=w>  </span><span class=c1># This is a list of times, in seconds, to broadcast &quot;game starting in X minutes/seconds&quot; messages.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># Each of these times is in seconds before the game starts.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># For each time, if the time is divisible by 60, the message will be displayed as &quot;start in X minutes&quot;. If it isn&#39;t,</span><span class=w></span>
+<span class=w>  </span><span class=c1># the message will be &quot;starting in X seconds.&quot;</span><span class=w></span>
+<span class=w>  </span><span class=nt>times-to-message-before-start</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">600</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">180</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">60</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">45</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">15</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class=w></span>
+<span class=w>  </span><span class="p p-Indicator">-</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class=w></span>
 
-<span class=c1># Hooks available to hook into separate plugins</span>
-<span class="l l-Scalar l-Scalar-Plain">hooks</span><span class="p p-Indicator">:</span>
-  <span class=c1># This hook is supposed to be for hooking into the Multiverse plugin, but it</span>
-  <span class=c1># has not yet been added. This setting has no effect.</span>
-  <span class="l l-Scalar l-Scalar-Plain">multiverse-core-hook</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=c1># Hooks available to hook into separate plugins</span><span class=w></span>
+<span class=nt>hooks</span><span class=p>:</span><span class=w></span>
+<span class=w>  </span><span class=c1># This hook is supposed to be for hooking into the Multiverse plugin, but it</span><span class=w></span>
+<span class=w>  </span><span class=c1># has not yet been added. This setting has no effect.</span><span class=w></span>
+<span class=w>  </span><span class=nt>multiverse-core-hook</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># This toggles the WorldEdit hook. SkyWars supports starting arenas both</span>
-  <span class=c1># using an integrated Bukkit method, and a faster WorldEdit method.</span>
-  <span class=c1>#</span>
-  <span class=c1># If this is true, and the WorldEdit plugin is enabled on the server,</span>
-  <span class=c1># WorldEdit will be used to copy arena blocks.</span>
-  <span class=c1>#</span>
-  <span class=c1># If this is false, or the WorldEdit plugin is not installed, the integrated</span>
-  <span class=c1># Bukkit method will be used to copy arena blocks.</span>
-  <span class=c1>#</span>
-  <span class=c1># Note that if the WorldEdit hook is enabled, and WorldEdit is installed,</span>
-  <span class=c1>#  SkyWars depends on WorldEdit being up-to-date to work correctly. If</span>
-  <span class=c1>#  WorldEdit is out of date, arenas will not be copied correctly.</span>
-  <span class="l l-Scalar l-Scalar-Plain">worldedit-hook</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># This toggles the WorldEdit hook. SkyWars supports starting arenas both</span><span class=w></span>
+<span class=w>  </span><span class=c1># using an integrated Bukkit method, and a faster WorldEdit method.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># If this is true, and the WorldEdit plugin is enabled on the server,</span><span class=w></span>
+<span class=w>  </span><span class=c1># WorldEdit will be used to copy arena blocks.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># If this is false, or the WorldEdit plugin is not installed, the integrated</span><span class=w></span>
+<span class=w>  </span><span class=c1># Bukkit method will be used to copy arena blocks.</span><span class=w></span>
+<span class=w>  </span><span class=c1>#</span><span class=w></span>
+<span class=w>  </span><span class=c1># Note that if the WorldEdit hook is enabled, and WorldEdit is installed,</span><span class=w></span>
+<span class=w>  </span><span class=c1>#  SkyWars depends on WorldEdit being up-to-date to work correctly. If</span><span class=w></span>
+<span class=w>  </span><span class=c1>#  WorldEdit is out of date, arenas will not be copied correctly.</span><span class=w></span>
+<span class=w>  </span><span class=nt>worldedit-hook</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 </pre></div></div><div class="list-group-item visible-xs visible-sm"><p><a href=http://daboross.net/projects/skywars/ >Index</a></p><p><a href=http://daboross.net/projects/skywars/commands-and-permissions>Commands and Permissions</a></p><p><a href=http://daboross.net/projects/skywars/configuring-skywars>Configuration</a></p><p><a href=http://daboross.net/projects/skywars/score>Score</a></p><p><a href=http://daboross.net/projects/skywars/faq>FAQ</a></p><p><a href=http://daboross.net/projects/skywars/creating-a-new-kit>Kits</a></p><p><a href=http://daboross.net/projects/skywars/creating-an-arena>Custom Arenas</a></p><p><a href=http://daboross.net/projects/skywars/configuring-chests>Random Chests</a></p><p><a href=http://daboross.net/projects/skywars/signs-and-portals>Join Signs &amp; Portals</a></p><p><a href=http://dev.bukkit.org/bukkit-plugins/skywars/ >Download</a></p><p><a href=https://github.com/SkyWars/SkyWars/ >GitHub</a></p><p><a href=http://daboross.net/projects/skywars/testing-skywars>Testing</a></p></div></div></div><div id=sidebar class="col-md-3 col-md-offset-8 visible-md visible-lg"><div class=list-group><div class=list-group-item><p><a href=http://daboross.net/projects/skywars/ >Index</a></p><p><a href=http://daboross.net/projects/skywars/commands-and-permissions>Commands and Permissions</a></p><p><a href=http://daboross.net/projects/skywars/configuring-skywars>Configuration</a></p><p><a href=http://daboross.net/projects/skywars/score>Score</a></p><p><a href=http://daboross.net/projects/skywars/faq>FAQ</a></p><p><a href=http://daboross.net/projects/skywars/creating-a-new-kit>Kits</a></p><p><a href=http://daboross.net/projects/skywars/creating-an-arena>Custom Arenas</a></p><p><a href=http://daboross.net/projects/skywars/configuring-chests>Random Chests</a></p><p><a href=http://daboross.net/projects/skywars/signs-and-portals>Join Signs &amp; Portals</a></p><p><a href=http://dev.bukkit.org/bukkit-plugins/skywars/ >Download</a></p><p><a href=https://github.com/SkyWars/SkyWars/ >GitHub</a></p><p><a href=http://daboross.net/projects/skywars/testing-skywars>Testing</a></p></div></div></div></div></div></body></html>

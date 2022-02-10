@@ -1,80 +1,80 @@
 <!DOCTYPE html>
-<html><head><title>Using the Score System</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>Using the Score System</h1><h3>Score</h3><p>The SkyWars plugin has a concept of a player &quot;score&quot;, which is added to when that player wins a game or kills someone in a game, and is subtracted from when that player is killed.</p><h3>Score Configuration Options</h3><p>Score is stored either in a json file, or on an sql server, depending on your configuration.</p><p>You can configure how much someone&#39;s score changes from different events, and how store is saved in the <code>main-config.yml</code>&#39;s <code>points</code> section:</p><div class=highlight><pre><span></span><span class=c1># Sub section for score storage</span>
-<span class="l l-Scalar l-Scalar-Plain">points</span><span class="p p-Indicator">:</span>
+<html><head><title>Using the Score System</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>Using the Score System</h1><h3>Score</h3><p>The SkyWars plugin has a concept of a player &quot;score&quot;, which is added to when that player wins a game or kills someone in a game, and is subtracted from when that player is killed.</p><h3>Score Configuration Options</h3><p>Score is stored either in a json file, or on an sql server, depending on your configuration.</p><p>You can configure how much someone&#39;s score changes from different events, and how store is saved in the <code>main-config.yml</code>&#39;s <code>points</code> section:</p><div class=highlight><pre><span></span><span class=c1># Sub section for score storage</span><span class=w></span>
+<span class=nt>points</span><span class=p>:</span><span class=w></span>
 
-  <span class=c1># Whether to enable point storage or not. If point storage is not enabled,</span>
-  <span class=c1># none of the following settings will take effect</span>
-  <span class="l l-Scalar l-Scalar-Plain">enable-points</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># Whether to enable point storage or not. If point storage is not enabled,</span><span class=w></span>
+<span class=w>  </span><span class=c1># none of the following settings will take effect</span><span class=w></span>
+<span class=w>  </span><span class=nt>enable-points</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they win a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">win-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they win a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>win-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">7</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they die in a game.</span>
-  <span class="l l-Scalar l-Scalar-Plain">death-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">-2</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they die in a game.</span><span class=w></span>
+<span class=w>  </span><span class=nt>death-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">-2</span><span class=w></span>
 
-  <span class=c1># The number of points to add to a player&#39;s score when they kill someone in</span>
-  <span class=c1>#  a game</span>
-  <span class="l l-Scalar l-Scalar-Plain">kill-point-diff</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class=w>  </span><span class=c1># The number of points to add to a player&#39;s score when they kill someone in</span><span class=w></span>
+<span class=w>  </span><span class=c1>#  a game</span><span class=w></span>
+<span class=w>  </span><span class=nt>kill-point-diff</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class=w></span>
 
-  <span class=c1># Number of seconds between saving the score to hard disk</span>
-  <span class=c1># In JSON storage, this is the number of seconds between saving the entire score</span>
-  <span class=c1># file to the hard disk.</span>
-  <span class=c1># In SQL storage, this is the number of seconds between saving only uncommitted data</span>
-  <span class=c1># to the SQL server. In SQL, this is also the number of seconds between leaderboard</span>
-  <span class=c1># top-10 updates (data shown on `/sw top`). Note that individual ranks (data shown</span>
-  <span class=c1># on `/sw rank`) is updated on a different timer, according to the</span>
-  <span class=c1># `individual-rank-update-interval` setting below.</span>
-  <span class="l l-Scalar l-Scalar-Plain">max-save-interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">300</span>
+<span class=w>  </span><span class=c1># Number of seconds between saving the score to hard disk</span><span class=w></span>
+<span class=w>  </span><span class=c1># In JSON storage, this is the number of seconds between saving the entire score</span><span class=w></span>
+<span class=w>  </span><span class=c1># file to the hard disk.</span><span class=w></span>
+<span class=w>  </span><span class=c1># In SQL storage, this is the number of seconds between saving only uncommitted data</span><span class=w></span>
+<span class=w>  </span><span class=c1># to the SQL server. In SQL, this is also the number of seconds between leaderboard</span><span class=w></span>
+<span class=w>  </span><span class=c1># top-10 updates (data shown on `/sw top`). Note that individual ranks (data shown</span><span class=w></span>
+<span class=w>  </span><span class=c1># on `/sw rank`) is updated on a different timer, according to the</span><span class=w></span>
+<span class=w>  </span><span class=c1># `individual-rank-update-interval` setting below.</span><span class=w></span>
+<span class=w>  </span><span class=nt>max-save-interval</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class=w></span>
 
-  <span class=c1># If true, use the SQL storage backend. If false, the JSON storage is used.</span>
-  <span class=c1># Note: When using SQL backend, for most efficiency, set max-save-interval to 20</span>
-  <span class=c1># SQL saving works differently than json saving, so max-save-interval values from</span>
-  <span class=c1># 20-100 seconds work best.</span>
-  <span class="l l-Scalar l-Scalar-Plain">use-sql</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class=w>  </span><span class=c1># If true, use the SQL storage backend. If false, the JSON storage is used.</span><span class=w></span>
+<span class=w>  </span><span class=c1># Note: When using SQL backend, for most efficiency, set max-save-interval to 20</span><span class=w></span>
+<span class=w>  </span><span class=c1># SQL saving works differently than json saving, so max-save-interval values from</span><span class=w></span>
+<span class=w>  </span><span class=c1># 20-100 seconds work best.</span><span class=w></span>
+<span class=w>  </span><span class=nt>use-sql</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class=w></span>
 
-  <span class=c1># SQL login info</span>
-  <span class="l l-Scalar l-Scalar-Plain">sql</span><span class="p p-Indicator">:</span>
-    <span class=c1># Host to connect to</span>
-    <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
-    <span class=c1># Port to connect to</span>
-    <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
-    <span class=c1># Database to store on. Data is stored in a `skywars_user` table in this</span>
-    <span class=c1>#  database.</span>
-    <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft</span>
-    <span class=c1># Username to login as. Using `root` is not recommended. Instead you should</span>
-    <span class=c1>#  set up a more restricted user.</span>
-    <span class="l l-Scalar l-Scalar-Plain">username</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-    <span class=c1># Password to login with.</span>
-    <span class="l l-Scalar l-Scalar-Plain">password</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">aComplexPassword</span>
+<span class=w>  </span><span class=c1># SQL login info</span><span class=w></span>
+<span class=w>  </span><span class=nt>sql</span><span class=p>:</span><span class=w></span>
+<span class=w>    </span><span class=c1># Host to connect to</span><span class=w></span>
+<span class=w>    </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span><span class=w></span>
+<span class=w>    </span><span class=c1># Port to connect to</span><span class=w></span>
+<span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">3306</span><span class=w></span>
+<span class=w>    </span><span class=c1># Database to store on. Data is stored in a `skywars_user` table in this</span><span class=w></span>
+<span class=w>    </span><span class=c1>#  database.</span><span class=w></span>
+<span class=w>    </span><span class=nt>database</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">minecraft</span><span class=w></span>
+<span class=w>    </span><span class=c1># Username to login as. Using `root` is not recommended. Instead you should</span><span class=w></span>
+<span class=w>    </span><span class=c1>#  set up a more restricted user.</span><span class=w></span>
+<span class=w>    </span><span class=nt>username</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class=w></span>
+<span class=w>    </span><span class=c1># Password to login with.</span><span class=w></span>
+<span class=w>    </span><span class=nt>password</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">aComplexPassword</span><span class=w></span>
 
-    <span class=c1># Time in seconds between updating the ranks of each individual. This is the</span>
-    <span class=c1># rank shown in `/sw rank`, and this will update the ranks of everyone on</span>
-    <span class=c1># the server at the given interval. However, updating each individual&#39;s rank is</span>
-    <span class=c1># a more costly operation than updating the top 10 ranks, so it is done on a</span>
-    <span class=c1># separate timer.</span>
-    <span class="l l-Scalar l-Scalar-Plain">individual-rank-update-interval</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">60</span>
-<span class=" -Error"> </span><span class=err>```</span>
+<span class=w>    </span><span class=c1># Time in seconds between updating the ranks of each individual. This is the</span><span class=w></span>
+<span class=w>    </span><span class=c1># rank shown in `/sw rank`, and this will update the ranks of everyone on</span><span class=w></span>
+<span class=w>    </span><span class=c1># the server at the given interval. However, updating each individual&#39;s rank is</span><span class=w></span>
+<span class=w>    </span><span class=c1># a more costly operation than updating the top 10 ranks, so it is done on a</span><span class=w></span>
+<span class=w>    </span><span class=c1># separate timer.</span><span class=w></span>
+<span class=w>    </span><span class=nt>individual-rank-update-interval</span><span class=p>:</span><span class=w> </span><span class="l l-Scalar l-Scalar-Plain">60</span><span class=w></span>
+<span class="w w-Error"> </span><span class=err>```</span><span class=w></span>
 
- <span class="l l-Scalar l-Scalar-Plain">Note that whichever method you choose for score storage, may also be used to</span>
- <span class="l l-Scalar l-Scalar-Plain">store other persistent user data, such as what kit each player has selected.</span>
+<span class=w> </span><span class="l l-Scalar l-Scalar-Plain">Note that whichever method you choose for score storage, may also be used to</span><span class=w></span>
+<span class=w> </span><span class="l l-Scalar l-Scalar-Plain">store other persistent user data, such as what kit each player has selected.</span><span class=w></span>
 
-<span class=c1>### Showing Score</span>
+<span class=c1>### Showing Score</span><span class=w></span>
 
-<span class=c1>#### In Chat</span>
+<span class=c1>#### In Chat</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">If you add the text `{SKYWARS.USERSCORE}` to someone&#39;s prefix or to the chat format in your preferred chat plugin, SkyWars will replace that text with the person&#39;s score number.</span>
+<span class="l l-Scalar l-Scalar-Plain">If you add the text `{SKYWARS.USERSCORE}` to someone&#39;s prefix or to the chat format in your preferred chat plugin, SkyWars will replace that text with the person&#39;s score number.</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">If you add the text `{SKYWARS.USERRANK}`, SkyWars will similarly replace that text with the person&#39;s rank number.</span>
+<span class="l l-Scalar l-Scalar-Plain">If you add the text `{SKYWARS.USERRANK}`, SkyWars will similarly replace that text with the person&#39;s rank number.</span><span class=w></span>
 
-<span class=c1>#### Top-10 leaderboard</span>
+<span class=c1>#### Top-10 leaderboard</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">To view the top 10 players with the most score, the command `/sw top` can be used.</span>
+<span class="l l-Scalar l-Scalar-Plain">To view the top 10 players with the most score, the command `/sw top` can be used.</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">When using the SQL backend, the data this command shows is updated every 20 seconds. In the JSON backend, the data is updated immediately.</span>
+<span class="l l-Scalar l-Scalar-Plain">When using the SQL backend, the data this command shows is updated every 20 seconds. In the JSON backend, the data is updated immediately.</span><span class=w></span>
 
-<span class=c1>#### Individual rank</span>
+<span class=c1>#### Individual rank</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">To view someone&#39;s individual rank, the `/sw rank &lt;player&gt;` can be used, or `/sw rank` to view one&#39;s own rank.</span>
+<span class="l l-Scalar l-Scalar-Plain">To view someone&#39;s individual rank, the `/sw rank &lt;player&gt;` can be used, or `/sw rank` to view one&#39;s own rank.</span><span class=w></span>
 
-<span class="l l-Scalar l-Scalar-Plain">When using the SQL backend, the data this command shows is updated by default every 60 seconds. In the JSON backend, the data is updated immediately.</span>
+<span class="l l-Scalar l-Scalar-Plain">When using the SQL backend, the data this command shows is updated by default every 60 seconds. In the JSON backend, the data is updated immediately.</span><span class=w></span>
 </pre></div></div><div class="list-group-item visible-xs visible-sm"><p><a href=http://daboross.net/projects/skywars/ >Index</a></p><p><a href=http://daboross.net/projects/skywars/commands-and-permissions>Commands and Permissions</a></p><p><a href=http://daboross.net/projects/skywars/configuring-skywars>Configuration</a></p><p><a href=http://daboross.net/projects/skywars/score>Score</a></p><p><a href=http://daboross.net/projects/skywars/faq>FAQ</a></p><p><a href=http://daboross.net/projects/skywars/creating-a-new-kit>Kits</a></p><p><a href=http://daboross.net/projects/skywars/creating-an-arena>Custom Arenas</a></p><p><a href=http://daboross.net/projects/skywars/configuring-chests>Random Chests</a></p><p><a href=http://daboross.net/projects/skywars/signs-and-portals>Join Signs &amp; Portals</a></p><p><a href=http://dev.bukkit.org/bukkit-plugins/skywars/ >Download</a></p><p><a href=https://github.com/SkyWars/SkyWars/ >GitHub</a></p><p><a href=http://daboross.net/projects/skywars/testing-skywars>Testing</a></p></div></div></div><div id=sidebar class="col-md-3 col-md-offset-8 visible-md visible-lg"><div class=list-group><div class=list-group-item><p><a href=http://daboross.net/projects/skywars/ >Index</a></p><p><a href=http://daboross.net/projects/skywars/commands-and-permissions>Commands and Permissions</a></p><p><a href=http://daboross.net/projects/skywars/configuring-skywars>Configuration</a></p><p><a href=http://daboross.net/projects/skywars/score>Score</a></p><p><a href=http://daboross.net/projects/skywars/faq>FAQ</a></p><p><a href=http://daboross.net/projects/skywars/creating-a-new-kit>Kits</a></p><p><a href=http://daboross.net/projects/skywars/creating-an-arena>Custom Arenas</a></p><p><a href=http://daboross.net/projects/skywars/configuring-chests>Random Chests</a></p><p><a href=http://daboross.net/projects/skywars/signs-and-portals>Join Signs &amp; Portals</a></p><p><a href=http://dev.bukkit.org/bukkit-plugins/skywars/ >Download</a></p><p><a href=https://github.com/SkyWars/SkyWars/ >GitHub</a></p><p><a href=http://daboross.net/projects/skywars/testing-skywars>Testing</a></p></div></div></div></div></div></body></html>

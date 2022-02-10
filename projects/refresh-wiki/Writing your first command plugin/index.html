@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head><title>This page contains a tutorial on creating a command plugin.</title><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><link rel=icon type=image/png href=/favicon.png><link href=/assets/documentation.css?b0fcf9b2 rel=stylesheet></head><body><div class=container><div class=row><div class="col-md-8 col-md-offset-1 col-xs-12 col-xs-offset-0"><div class=list-group><div class=list-group-item><h1>This page contains a tutorial on creating a command plugin.</h1><h3>Example command</h3><p>The command hook can be used to register a command in CloudBot.</p><p>Here&#39;s an example command which will return the input given to it, added to itself.</p><div class=highlight><pre><span></span><span class=kn>from</span> <span class=nn>cloudbot</span> <span class=kn>import</span> <span class=n>hook</span>
 
-<span class=nd>@hook.command</span><span class=p>()</span>
+<span class=nd>@hook</span><span class=o>.</span><span class=n>command</span><span class=p>()</span>
 <span class=k>def</span> <span class=nf>echo</span><span class=p>(</span><span class=n>text</span><span class=p>):</span>
     <span class=k>return</span> <span class=n>text</span> <span class=o>+</span> <span class=s2>&quot; &quot;</span> <span class=o>+</span> <span class=n>text</span>
 </pre></div><h4>How you can use commands</h4><p>This defines a command that replies with its input, added together. The <strong>@hook.command()</strong> tells CloudBot that the function should be registered as a bot command.</p><p>Any bot command can be called from an irc channel in the following ways:</p><div class=highlight><pre><span></span>- .&lt;command&gt; &lt;arguments&gt;
